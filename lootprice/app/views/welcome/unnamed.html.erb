@@ -1,0 +1,20 @@
+<!--Uncomment below line to see the format of json file-->
+<%#= @x[0] %>
+
+<% a=0 %>
+<ol>
+<% for i in @x %>
+	<li><%= i["title"] %> on
+	<%= i["description"] %><br>
+	<%# r[a] = i["imageUrls"]%>
+	<%#= r[a] %>
+	<img src = "<%= @r[a]["url"] %>" height = "100px" width = "100px" alt = "<%= i["description"] %>"><br>
+	<%#= @r[a]["url"] %>
+	<%= i["availability"] %><br>
+	<a href = "<%= i["url"] %>">BUY NOW</a><br><br></li>
+	<% a+=1 %>
+	<% if a>10 %>
+		<% break %>
+	<% end %>
+<% end %>
+</ol>
